@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'static_page/home'
+
+  get 'static_page/solids'
+
+  get 'static_page/select_solid'
+
+  get 'static_page/help'
+
   resources :microposts
   resources :users
 

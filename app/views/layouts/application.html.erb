@@ -1,14 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleRails</title>
+	<title>Analisys System</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700,800' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <!-- Fixed navbar -->
+  <div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="fa fa-gear"></span>
+        </button>
+        <a class="navbar-brand" href="index.html#"><span>Kel-Tech</span></a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html#">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li class="dropdown">
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html#">Action</a></li>
+              <li><a href="index.html#">Another action</a></li>
+              <li><a href="index.html#">Something else here</a></li>
+      <li class="dropdown-submenu"><a href="index.html#">Sub menu</a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#">Action</a></li>
+          <li><a href="index.html#">Another action</a></li>
+          <li><a href="index.html#">Something else here</a></li>
+          </ul>
+      </li>              
+      </ul>
+          </li>
+          
+        </ul>
+    <ul class="nav navbar-nav navbar-right user-nav">
+      <li class="dropdown profile_menu">
+        <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "avatar2.jpg" %><span>Jeff Hanneman</span> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="index.html#">My Account</a></li>
+          <li><a href="index.html#">Profile</a></li>
+          <li class="divider"></li>
+          <li><a href="index.html#">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>			
+          </div><!--/.nav-collapse animate-collapse -->
+    </div>
+  </div>
 
-</body>
+	<div id="cl-wrapper" class="fixed-menu">
+		<div class="cl-sidebar" data-position="right" >
+			<div class="cl-toggle"><i class="fa fa-bars"></i></div>
+			<div class="cl-navblock">
+        <div class="menu-space">
+          <div class="content">
+          
+            <ul class="cl-vnavigation">
+              <li><a href="index.html#"><i class="fa fa-flask"></i><span>New analisys</span></a>
+                <ul class="sub-menu">
+                    <li class="active"><a href="static_page/select_solid"><span class="label label-primary pull-right">New</span> Solids</a></li>
+                    <li ><a href="index.html">Faulier</a></li>
+                    <li ><a href="index.html">Residual</a></li>
+                    <li ><a href="index.html">Coupon</a></li>
+                    <li ><a href="index.html">Bacteria</a></li>
+                    <li ><a href="index.html">Oilprofile</a></li>
+                    
+                </ul>
+              </li>
+              <li><a href="index.html#"><i class="fa fa-bar-chart-o"></i><span>Reports</span></a>
+                <ul class="sub-menu">
+                    <li><a href="ui-elements.html">General</a></li>
+                    <li ><a href="dashboard2.html"> Solids</a></li>
+                    <li ><a href="index.html">Faulier</a></li>
+                    <li ><a href="index.html">Residual</a></li>
+                    <li ><a href="index.html">Coupon</a></li>
+                    <li ><a href="index.html">Bacteria</a></li>
+                    <li ><a href="index.html">Oilprofile</a></li>
+                </ul>
+              </li>
+                
+              
+            </ul>
+          </div>
+        </div>
+        <div class="text-right collapse-button" style="padding:7px 9px;">
+          <input type="text" class="form-control search" placeholder="Search..." />
+          <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+        </div>
+			</div>
+		</div>
+	
+		<div class="container-fluid">
+
+<%= yield %>
+</div> 
+		
+	</div>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript">
+      $(document).ready(function(){
+        //initialize the javascript
+        App.init({
+          nanoScroller: false
+        });
+        
+        App.dashBoard();        
+        
+          introJs().setOption('showBullets', false).start();
+
+      });
+    </script>
+    
+    
+  <script src="js/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+  </body>
 </html>
